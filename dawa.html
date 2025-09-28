@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gangy Landing Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0d0d;
+  --accent:#e50914;
+  --accent2:#ff3c00;
+  --muted:#aaa;
+  --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--bg);
+  color:#fff;
+  overflow-x:hidden;
+}
+header{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,rgba(229,9,20,0.8),rgba(0,0,0,0.9)),
+             url('https://images.unsplash.com/photo-1608889175123-bffcf76dcde7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  text-align:center;
+}
+header h1{
+  font-size:64px;
+  font-weight:900;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  animation:fadeUp 1.3s ease forwards;
+}
+header p{
+  font-size:20px;
+  color:var(--muted);
+  margin:20px 0;
+  animation:fadeUp 1.6s ease forwards;
+}
+header .btn{
+  display:inline-block;
+  padding:14px 28px;
+  margin-top:20px;
+  border-radius:var(--radius);
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  font-weight:700;
+  text-decoration:none;
+  color:#fff;
+  transition:transform 0.3s;
+}
+header .btn:hover{transform:scale(1.1);}
+
+section{
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+  text-align:center;
+}
+section h2{
+  font-size:36px;
+  margin-bottom:40px;
+}
+
+/* Cards arrangement */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
+.card{
+  background:#1a1a1a;
+  padding:30px;
+  min-height:250px; /* default height */
+  border-radius:var(--radius);
+  transition:transform 0.4s, box-shadow 0.4s;
+}
+.card img{
+  max-width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:var(--radius);
+  margin-bottom:15px;
+}
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 50px rgba(229,9,20,0.3);
+}
+
+/* Special rule for QR card: don’t stretch it */
+#qr .card{
+  min-height:auto;
+}
+
+footer{
+  background:#000;
+  padding:20px;
+  text-align:center;
+  color:var(--muted);
+  font-size:14px;
+  border-top:1px solid #111;
+}
+
+/* Animations */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.fade-up{opacity:0;transform:translateY(20px);transition:all 0.7s ease-out;}
+.fade-up.visible{opacity:1;transform:none;}
+ fade-up.btn{
+  display:inline-block;
+  padding:14px 28px;
+  margin-top:20px;
+  border-radius:var(--radius);
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  font-weight:700;
+  text-decoration:none;
+  color:#fff;
+  transition:transform 0.3s;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Gangy Vibes</h1>
+  <p>Welcome to the streets of style — bold, raw, untouchable.</p>
+  <a href="https://t.me/+E3worOErhPQ4NGE0" class="btn">Enter the Zone</a>
+</header>
+
+<section id="about" class="fade-up">
+  <h2>BANA</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="toba.jpeg" alt="About Image">
+      <p>Gangy is about confidence and living unapologetically bold.</p>
+    </div>
+    <div class="card">
+      <img src="tobu.jpeg" alt="About Image">
+      <p>Every design here reflects raw energy and fearless aura.</p>
+    </div>
+    <div class="card">
+      <img src="tobi.webp" alt="About Image">
+      <p>No filler. Just straight-up impact and street-level authority.</p>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="fade-up">
+  <h2>TMAR</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="dawa2.jpg" alt="Feature Image">
+      <p>⚡ Energy</p>
+    </div>
+    <div class="card">
+      <img src="dawa.jpg" alt="Feature Image">
+      <p>🔥 Style</p>
+    </div>
+    <div class="card">
+      <img src="dawa1.jpeg" alt="Feature Image">
+      <p>💎 Authenticity</p>
+    </div>
+  </div>
+</section>
+
+<section id="connect" class="fade-up">
+  <h2>EVERYTHING IN ONE PLACE</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="vape.jpg" alt="Connect Image">
+      <p>Follow us on socials — this is more than a vibe, it’s a movement.</p>
+    </div>
+    <div class="card">
+      <img src="cigar.jpeg" alt="Connect Image">
+      <p>Be part of something untouchable, bigger than trends.</p>
+    </div>
+    <div class="card">
+      <img src="tobac.webp" alt="Connect Image">
+      <p>The streets speak. We listen. You move with us.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QR Card -->
+<section id="qr" class="fade-up">
+  <h2>Scan the Code</h2>
+  <div class="card">
+    <img src="po.png" alt="QR Code" style="width:200px;height:200px;">
+    <p style="margin-top:15px;color:var(--muted);">Scan to connect instantly.</p>
+    <a href="https://t.me/+E3worOErhPQ4NGE0" class="btn" style="display:inline-block;
+  padding:14px 28px;
+  margin-top:20px;
+  border-radius:var(--radius);
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  font-weight:700;
+  text-decoration:none;
+  color:#fff;
+  transition:transform 0.3s;">Enter the Zone</a>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> Gangy Landing — All Rights Reserved by faf.
+</footer>
+
+<script>
+// footer year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// fade-up reveal
+const faders=document.querySelectorAll('.fade-up');
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:0.3});
+faders.forEach(f=>io.observe(f));
+</script>
+
+</body>
+</html>
